@@ -27,8 +27,7 @@ namespace customer_support.Models
 
             modelBuilder.Entity<UserModel>()
                 .Property(x => x.FirstName)
-                .HasColumnName("first_name")
-                .IsRequired();
+                .HasColumnName("first_name");
 
             modelBuilder.Entity<UserModel>()
                 .Property(x => x.LastName)
@@ -36,7 +35,8 @@ namespace customer_support.Models
 
             modelBuilder.Entity<UserModel>()
                 .Property(x => x.Email)
-                .HasColumnName("email");
+                .HasColumnName("email")
+                .IsRequired();
 
             modelBuilder.Entity<UserModel>()
                 .Property(x => x.Password)
