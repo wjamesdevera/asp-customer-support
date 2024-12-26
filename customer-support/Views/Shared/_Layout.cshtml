@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app="ticketApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/angularjs")
+</head>
+<body ng-controller="ticketController" ng-init="init()">
+    <header class="header">
+        <div class="nav-container">
+            <div class="left-nav">
+                <img src="~/Content/Assets/LOGO.png" class="logo" />
+                <div class="site-divider">
+                </div>
+                <div class="learn-container">
+                    <div class="learn">Learn</div>
+                </div>
+            </div>
+            <div class="right-nav right">
+                <a ng-if="isLoggedIn" ng-model="userEmail" class="rounded-circle p-4 profile d-flex justify-content-center align-items-center border-1 border-dark" href="#">
+                    <div class="text-uppercase text-white text-center">
+                        {{ userEmail[0] }}
+                    </div>
+                </a>
+                <div ng-if="!isLoggedIn">
+                    <a class="link" href="/home/login">Sign in</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/core-app")
+</body>
+</html>

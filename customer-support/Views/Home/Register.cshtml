@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Views/Shared/_Auth.cshtml";
+}
+<div class="container">
+    <div class="content" ng-if="loginPage = 0">
+        <div class="left-bg"><img src="~/Content/Assets/left-bg.png" /></div>
+        <div class="right-container">
+            <div class="login-form">
+                <img src="~/Content/Assets/Deskify Logo.png" />
+                <h2 class="title">Create an Account</h2>
+                <input type="email" placeholder="Enter your Email" required />
+                <p class="text"><a href="#">Already have an account?</a></p>
+                <div class="btns">
+                    <button class="nextBtn">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content" ng-if="loginPage = 1">
+        <div class="left-bg"><img src="~/Content/Assets/left-bg.png" /></div>
+        <div class="right-container">
+            <div class="login-form">
+                <img src="~/Content/Assets/Deskify Logo.png" />
+                <h2 class="title">Create an Account</h2>
+                <input type="email" placeholder="Enter your Email" required />
+                <p class="text"><a href="#">Already have an account?</a></p>
+                <div class="btns">
+                    <button class="nextBtn">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html ng-app="loginApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/auth-css")
+    @Scripts.Render("~/bundles/angularjs")
+</head>
+<body ng-controller="loginController">
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/auth-app")
+</body>
+</html>

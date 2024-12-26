@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="image-container">
+    <img src="~/Content/Assets/steve-johnson-zBacOXolzPI-unsplash.jpg" class="banner-img">
+    <div class="column-2">
+        <div class="column-left">
+            <div class="banner-container">
+                <div class="banner-heading">
+                    <h2>DESKIFY | Q & A</h2>
+                    <p class="banner-desc"> Explore questions deigned to guide you through every stage of your technical journey</p>
+                </div>
+            </div>
+        </div>
+        <div class="column-right"></div>
+    </div>
+</div>
+<div class="row p-4">
+    <div class="col col-3">
+        <div>
+            <h3 class="filter-title">Filter</h3>
+            <hr />
+            <h4 class="filter-title">Content</h4>
+        </div>
+    </div>
+    <div ng-if="isLoading" class="d-flex justify-content-center align-items-center">
+        <div class="loader"></div>
+    </div>
+    <div class="col col-9 question-section" ng-if="!isLoading">
+        <div class="question-header">
+            <h3 class="number-of-questions">{{ numberOfQuestions }} questions</h3>
+            <button class="btn">Ask a question</button>
+        </div>
+        <div class="question-card-list">
+            <div ng-repeat="ticket in tickets track by $index" class="question-card-list">
+                <div class="question-card">
+                    <div>
+                        <h3 class="question-title">
+                            <a class="link" href="/home/ticket/{{ ticket.id }}">
+                                {{ ticket.title }}
+                            </a>
+                        </h3>
+                        <small>
+                            <a>
+                                {{ ticket.author }}
+                            </a>
+                        </small>
+                        <p class="question-text">{{ticket.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,245 @@
+﻿:root {
+    --background: #1e1e1e;
+    --light-blue: #75B6E7;
+    --fire-fly: #091F2C;
+    --royal-blue: #4379E4;
+    --hero-image: #050A1D;
+    --white: #EFF0F3;
+}
+
+body {
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--white);
+}
+
+.header {
+    border-bottom: 2px solid var(--white);
+    background-color: var(--background);
+    padding: 1rem 2rem;
+    color: var(--white);
+}
+
+.logo {
+    height: 1.5rem;
+}
+
+.site-divider {
+    height: 1.5rem;
+    border-inline-start: 2px solid var(--white);
+    margin-inline-start: .5rem;
+    display: inline-block;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-nav {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+}
+
+.link {
+    color: var(--light-blue);
+}
+
+    .link:hover {
+        color: var(--royal-blue);
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+.right-nav {
+}
+
+.learn-container {
+}
+
+.learn {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.column-1 {
+    columns: 1;
+    width: auto;
+    background-color: #050A1D;
+    padding: 25px;
+}
+
+.Q-A {
+    border-left-style: solid;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.column-2 {
+    display: grid;
+    grid-template-columns: 1fr 0fr;
+    max-height: 5%;
+    color: var(--white);
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+
+.column-left {
+}
+
+
+.banner-container {
+}
+
+.banner-heading {
+    font-size: 3rem; /* 48px */
+    line-height: 1;
+}
+
+.banner-desc {
+    font-size: 1rem;
+}
+
+.image-container {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.banner-img {
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: auto;
+    z-index: -1;
+}
+
+
+@media (min-width: 768px) {
+    .banner-img {
+        width: 100%;
+    }
+
+    .column-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-height: 5%;
+        color: var(--white);
+        padding-top: 3rem;
+        padding-bottom: 5rem;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}
+
+.question-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.question-card {
+    background-color: var(--fire-fly);
+    color: var(--white);
+    padding: 1rem 2rem;
+}
+
+    .question-card .question-title {
+        color: var(--light-blue);
+        font-size: 1.5rem;
+    }
+
+    .question-card .question-text {
+        opacity: 90%;
+    }
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .question-header button {
+        background-color: var(--light-blue);
+        color: var(--background);
+        text-transform: none;
+        font-weight: 700;
+    }
+
+        .question-header button:hover {
+            background-color: var(--royal-blue);
+        }
+
+.number-of-questions {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+}
+
+.question-section {
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.filter-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.question-m-width {
+    max-width: 90%;
+}
+@media (min-width: 768px) {
+    .question-m-width {
+        max-width: 50%;
+    }
+}
+
+.profile {
+    width: 50px;
+    height: 50px;
+    background: var(--light-blue);
+    text-decoration: none;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 45px;
+    aspect-ratio: 1;
+    --c: no-repeat linear-gradient(#000 0 0);
+    background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+    background-size: 20% 100%;
+    animation: l1 1s infinite linear;
+}
+
+@keyframes l1 {
+    0% {
+        background-size: 20% 100%,20% 100%,20% 100%
+    }
+
+    33% {
+        background-size: 20% 10%,20% 100%,20% 100%
+    }
+
+    50% {
+        background-size: 20% 100%,20% 10%,20% 100%
+    }
+
+    66% {
+        background-size: 20% 100%,20% 100%,20% 10%
+    }
+
+    100% {
+        background-size: 20% 100%,20% 100%,20% 100%
+    }
+}

@@ -1,0 +1,7 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<main ng-init="fetchTicket(@Html.Raw(ViewBag.TicketId))" class="container-md col-md-auto mt-3 question-m-width">
+    <h3 ng-model="ticket.Title">{{ ticket.Title }}</h3>
+    <p ng-model="ticket.Description">{{ ticket.Description }}</p>
+</main>
