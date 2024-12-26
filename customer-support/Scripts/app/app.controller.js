@@ -41,6 +41,12 @@
         });
     }
 
-
-
+    $scope.askAQuestionButton = function () {
+        console.log("clicked")
+        if (!$scope.isLoggedIn) {
+            window.location.href = '/home/login'
+        } else {
+            window.location.href = '/home/createticket'
+        }
+    }
 });

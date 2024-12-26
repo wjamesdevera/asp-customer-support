@@ -42,5 +42,9 @@ namespace customer_support.Controllers
         {
             return View();
         }
+        public ActionResult CreateTicket()
+        {
+            return View();
+        }
     }
 }

@@ -26,9 +26,21 @@ namespace customer_support.Controllers
 
         [HttpGet]
         [Route("")]
-        public IHttpActionResult Check()
+        public IHttpActionResult getUser([FromUri] string userEmail)
         {
-            return Ok(new { message = "Hello World"});
+            if (userEmail == null)
+            {
+                return NotFound();
+            }
+            using (var db = new TicketDbContext())
+            {
+                var userExists = db.Users.Where(x => x.Email.Equals(userEmail)).FirstOrDefault();
+                if (userExists == null)
+                {
+                    return NotFound();
+                }
+                return Ok(new { status = "success", data = new { user = userExists.Email, userId = userExists.Id } });
+            }
         }
 
         [HttpPost]
@@ -43,8 +55,6 @@ namespace customer_support.Controllers
                 }
                 UserModel newUser = new UserModel
                 {
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
                     Email = user.Email,
                     Password = hashPassword(user.Password),
                     CreatedAt = DateTime.Now,

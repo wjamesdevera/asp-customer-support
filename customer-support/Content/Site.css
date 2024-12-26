@@ -242,4 +242,81 @@ body {
     100% {
         background-size: 20% 100%,20% 100%,20% 100%
     }
+
 }
+
+/*CREATE TICKET SECTION*/
+.header {
+    background-color: #111;
+    padding: 20px;
+}
+
+    .header h1 {
+        margin: 0;
+    }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form-section {
+    width: 60%;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+    .form-section h2 {
+        margin-bottom: 20px;
+    }
+
+    .form-section label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .form-section input, .form-section textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #555;
+        border-radius: 5px;
+        background-color: #222;
+        color: #fff;
+    }
+
+    .form-section button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #0078D4;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        .form-section button:hover {
+            background-color: #005a9e;
+        }
+
+.tips-section {
+    width: 35%;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+    .tips-section h3 {
+        margin-bottom: 20px;
+    }
+
+    .tips-section p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }

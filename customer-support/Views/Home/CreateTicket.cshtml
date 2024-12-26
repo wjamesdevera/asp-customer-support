@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="header">
+    <h1>DESKIFY | Q&A</h1>
+    <p>Explore questions designed to guide you through every stage of your technical journey</p>
+</div>
+
+<div class="container">
+    <div class="form-section">
+        <h2>Write your Question</h2>
+        <label for="title">Title<span style="color: red;">*</span></label>
+        <input type="text" id="title" placeholder="Sum up your question in a sentence.">
+
+        <label for="tags">Tags<span style="color: red;">*</span></label>
+        <input type="text" id="tags" placeholder="Select up to 5 tags to describe your question.">
+
+        <label for="details">Details<span style="color: red;">*</span></label>
+        <textarea id="details" rows="6" placeholder="Share enough details about the problem to understand your issue."></textarea>
+
+        <button>Post your question</button>
+    </div>
+
+    <div class="tips-section">
+        <h3>Tips for a question</h3>
+        <p>Ask your question in the language of the Q&A site.</p>
+        <p>To get the most out of Q&A, please make sure to submit your questions in the language of the Q&A site you are on. This will ensure that our community of experts can provide accurate and helpful answers to your question.</p>
+        <p>Search: Another user may have experienced the issue you are facing. Search for product and service-related keywords, and you may find a solution that has already been posted.</p>
+        <p>Summarize: Use the Question Title block to give a short snapshot of your issue. Include product and service-related keywords to help other Q&A users find your thread.</p>
+        <p>Provide full details: Include all the details of your issue in the Question Details block. Explain your scenario clearly to ensure quality answers.</p>
+    </div>
+</div>
