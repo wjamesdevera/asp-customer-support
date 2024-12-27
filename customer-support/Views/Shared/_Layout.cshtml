@@ -12,19 +12,28 @@
     <header class="header">
         <div class="nav-container">
             <div class="left-nav">
-                <img src="~/Content/Assets/LOGO.png" class="logo" />
+                <a href="/">
+                    <img src="~/Content/Assets/LOGO.png" class="logo" />
+                </a>
                 <div class="site-divider">
                 </div>
                 <div class="learn-container">
-                    <div class="learn">Learn</div>
+                    <a href="/" class="learn">Learn</a>
                 </div>
             </div>
-            <div class="right-nav right">
-                <a ng-if="isLoggedIn" ng-model="userEmail" class="rounded-circle p-4 profile d-flex justify-content-center align-items-center border-1 border-dark" href="#">
-                    <div class="text-uppercase text-white text-center">
-                        {{ userEmail[0] }}
+            <div class="right-nav right position-relative">
+                <div>
+                    <a ng-if="isLoggedIn" ng-model="userFirstName" class="rounded-circle p-4 profile d-flex justify-content-center align-items-center border-1 border-dark" ng-click="toggleLogoutVisible()">
+                        <div class="text-uppercase text-white text-center">
+                            {{ userFirstName[0] }}
+                        </div>
+                    </a>
+                    <div class="logout-menu" ng-show="logoutVisible">
+                        <div>
+                            <a ng-click="logout()" class="logout-button" href="/">Logout</a>
+                        </div>
                     </div>
-                </a>
+                </div>
                 <div ng-if="!isLoggedIn">
                     <a class="link" href="/home/login">Sign in</a>
                 </div>

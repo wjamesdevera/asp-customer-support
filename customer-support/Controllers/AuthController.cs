@@ -55,6 +55,8 @@ namespace customer_support.Controllers
                 }
                 UserModel newUser = new UserModel
                 {
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
                     Email = user.Email,
                     Password = hashPassword(user.Password),
                     CreatedAt = DateTime.Now,
@@ -86,7 +88,7 @@ namespace customer_support.Controllers
                 {
                     return Unauthorized();
                 }
-                return Ok(new { status = "success", data = new { user = userExists.Email, userId = userExists.Id } });
+                return Ok(new { status = "success", data = new { user = userExists.Email, userId = userExists.Id, userFirstName = userExists.FirstName } });
             }
         }
 

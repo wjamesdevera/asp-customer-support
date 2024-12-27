@@ -21,7 +21,7 @@ namespace customer_support.Controllers
                               select new
                               {
                                   id = ticket.Id,
-                                  author = user.FirstName + user.LastName,
+                                  author = user.FirstName + " " + user.LastName,
                                   title = ticket.Title,
                                   description = ticket.Description,
                                   createdAt = ticket.CreatedAt,

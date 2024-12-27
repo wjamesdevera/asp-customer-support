@@ -240,13 +240,16 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Analytics.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\TicketDbContext.cs" />
     <Compile Include="Models\TicketModel.cs" />
     <Compile Include="Models\UserModel.cs" />
@@ -286,6 +289,9 @@
     <Content Include="Scripts\app\login\login.module.js" />
     <Content Include="Scripts\app\login\login.service.js" />
     <Content Include="Scripts\app\login\validation.js" />
+    <Content Include="Scripts\app\ticket\ticket.controller.js" />
+    <Content Include="Scripts\app\ticket\ticket.module.js" />
+    <Content Include="Scripts\app\ticket\ticket.service.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -345,9 +351,11 @@
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Shared\_Auth.cshtml" />
     <Content Include="Views\Home\CreateTicket.cshtml" />
+    <Content Include="Views\Shared\_Analytics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Analytics\" />
     <Folder Include="Views\Seed\" />
   </ItemGroup>
   <ItemGroup>

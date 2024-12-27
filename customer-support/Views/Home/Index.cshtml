@@ -17,11 +17,11 @@
 </div>
 <div class="row p-4">
     <div class="col col-3">
-        <div>
+        @*<div>
             <h3 class="filter-title">Filter</h3>
             <hr />
             <h4 class="filter-title">Content</h4>
-        </div>
+        </div>*@
     </div>
     <div ng-if="isLoading" class="d-flex justify-content-center align-items-center">
         <div class="loader"></div>
@@ -45,7 +45,9 @@
                                 {{ ticket.author }}
                             </a>
                         </small>
-                        <p class="question-text">{{ticket.description}}</p>
+                        <p class="question-text">
+                            {{ truncateText(ticket.description) }}
+                        </p>
                     </div>
                 </div>
             </div>

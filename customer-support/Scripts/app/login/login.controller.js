@@ -1,7 +1,9 @@
 ﻿loginApp.controller("loginController", function ($scope, loginService) {
     const MAX_LOGIN_PAGE = 2;
+    const MAX_REGISTER_PAGE = 3;
     let email = "";
     $scope.loginPage = 1;
+    $scope.registerPage = 1;
 
     $scope.loginNext = function () {
         email = $scope.email;
@@ -43,8 +45,10 @@
             if (response.data.status === "success" && response.status === 200) {
                 const userId = response.data.data.userId;
                 const userEmail = response.data.data.user;
+                const userFirstName = response.data.data.userFirstName;
                 sessionStorage.setItem("user_id", userId);
                 sessionStorage.setItem("user_email", userEmail);
+                sessionStorage.setItem("user_first_name", userFirstName);
                 $scope.email = ""
                 $scope.password = ""
                 $scope.loginErrorMessage = null;
@@ -54,6 +58,13 @@
             $scope.password = "";
             $scope.loginErrorMessage = "Your account or password is incorrect.";
         });
+    }
+
+    $scope.registerPrev = function () {
+        $scope.email = email;
+        if (!(($scope.registerPage + 0) <= 0)) {
+            $scope.registerPage--;
+        }
     }
 
     $scope.registerNext = function () {
@@ -75,8 +86,8 @@
                 console.log('Email already exists');
             },
             function (error) {
-            if (!(($scope.loginPage + 1) > MAX_LOGIN_PAGE)) {
-                $scope.loginPage++;
+                if (!(($scope.registerPage + 1) > MAX_REGISTER_PAGE)) {
+                    $scope.registerPage++;
                 $scope
             }
             $scope.emailErrorMessage = null;
@@ -91,5 +102,12 @@
             return;
         }
 
+        loginService.register($scope.firstName, $scope.lastName, $scope.email, $scope.password).then(function (response) {
+            if (response.status == 200) {
+                window.location.href = '/'
+                $scope.login();
+            }
+        }, function (error) { }).finally(function (response) {
+        });
     }
 })

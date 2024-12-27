@@ -11,12 +11,14 @@
         });
     }
 
-    this.register = function (email, password) {
+    this.register = function (firstName, lastName, email, password) {
         return $http({
             method: 'POST',
             url: '/api/auth/register',
             headers: 'application/json',
             data: {
+                firstName: firstName,
+                lastName: lastName,
                 email: email,
                 password: password
             }

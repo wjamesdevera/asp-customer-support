@@ -66,6 +66,12 @@ body {
 .learn {
     font-size: 1.5rem;
     font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+}
+
+.learn:hover {
+    text-decoration: underline;
 }
 
 .column-1 {
@@ -155,14 +161,18 @@ body {
     padding: 1rem 2rem;
 }
 
-    .question-card .question-title {
-        color: var(--light-blue);
-        font-size: 1.5rem;
-    }
+.question-card .question-title {
+    color: var(--light-blue);
+    font-size: 1.5rem;
+}
 
-    .question-card .question-text {
-        opacity: 90%;
-    }
+.question-card .question-text {
+    opacity: 90%;
+}
+
+.question-text {
+
+}
 
 .question-header {
     display: flex;
@@ -212,11 +222,15 @@ body {
     text-decoration: none;
 }
 
+.profile:hover  {
+    cursor: pointer;
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
     width: 45px;
     aspect-ratio: 1;
-    --c: no-repeat linear-gradient(#000 0 0);
+    --c: no-repeat linear-gradient(var(--light-blue) 0 0);
     background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
     background-size: 20% 100%;
     animation: l1 1s infinite linear;
@@ -320,3 +334,19 @@ body {
         margin-bottom: 15px;
         line-height: 1.6;
     }
+
+
+.logout-menu {
+    position: fixed;
+    inset: 6rem 1rem auto auto;
+    background-color: var(--background);
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding: 1rem;
+    z-index: 100;
+}
+
+.logout-button{
+    cursor: pointer;
+}

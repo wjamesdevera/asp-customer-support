@@ -2,24 +2,51 @@
     Layout = "~/Views/Shared/_Auth.cshtml";
 }
 <div class="login-form-container">
-    <div class="login-form-wrapper" ng-show="loginPage === 1">
+    <div class="login-form-wrapper" ng-show="registerPage === 1">
         <img class="login-img" src="~/Content/Assets/LOGO.png" />
         <h2 class="title">Create Account</h2>
         <input ng-model="email" type="email" placeholder="Enter your Email" required class="email-text-field" />
+        <small class="text-danger fs-6" ng-show="emailErrorMessage">{{ emailErrorMessage }}</small>
         <div>
-            <p class="text">No account?<a href="#">Create one!</a></p>
-            <a href="#">Can't access your account?</a>
+            <p class="text">Already have an account?<a href="/home/login">Log in</a></p>
         </div>
         <div class="btns">
             <button class="nextBtn" ng-click="registerNext()">Next</button>
         </div>
     </div>
-    <div class="login-form-wrapper" ng-show="loginPage === 2">
+    <div class="login-form-wrapper" ng-show="registerPage === 2">
         <img class="login-img" src="~/Content/Assets/LOGO.png" />
         <p class="text-white" ng-model="email">{{ email }}</p>
         <h2 class="title">Enter password</h2>
         <p class="text-danger text-sm" ng-show="loginErrorMessage" ng-model="loginErrorMessage">{{ loginErrorMessage }}</p>
         <input ng-model="password" type="password" placeholder="Enter your password" required class="password-text-field" />
+        <div class="btns">
+            <button class="prevBtn" ng-click="loginPrev()">Back</button>
+            <button class="nextBtn" ng-click="registerNext()">Next</button>
+        </div>
+    </div>
+    <div class="login-form-wrapper" ng-show="registerPage === 3">
+        <img class="login-img" src="~/Content/Assets/LOGO.png" />
+        <p class="text-white" ng-model="email">{{ email }}</p>
+        <input ng-model="firstName" 
+               class="email-text-field" 
+               type="text" 
+                id="first-name" 
+                name="firstName" 
+                placeholder="Enter your first name" 
+                maxlength="50" 
+                required
+                aria-required="true"
+        />
+        <input ng-model="lastName" class="email-text-field" 
+               type="text" 
+                id="last-name" 
+                name="lastName" 
+                placeholder="Enter your last name" 
+                maxlength="50" 
+                required 
+                aria-required="true"
+               />
         <div class="btns">
             <button class="prevBtn" ng-click="loginPrev()">Back</button>
             <button class="nextBtn" ng-click="register()">Sign In</button>

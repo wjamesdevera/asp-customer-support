@@ -14,6 +14,7 @@ namespace customer_support.Models
     {
         public DbSet<UserModel> Users { get; set; }
         public DbSet<TicketModel> Tickets { get; set; }
+        public DbSet<CommentModel> Comments { get; set; }
         public TicketDbContext(): base()
         {
         }
@@ -72,6 +73,31 @@ namespace customer_support.Models
                 .HasColumnName("created_at");
 
             modelBuilder.Entity<TicketModel>()
+                .Property(x => x.UpdatedAt)
+                .HasColumnName("updated_at");
+
+            modelBuilder.Entity<CommentModel>()
+                .HasKey(x => x.Id)
+                .ToTable("comments_tbl");
+
+            modelBuilder.Entity<CommentModel>()
+                .Property(x => x.UserId)
+                .HasColumnName("user_id");
+            
+            modelBuilder.Entity<CommentModel>()
+                .Property(x => x.TicketId)
+                .HasColumnName("ticket_id");
+
+            modelBuilder.Entity<CommentModel>()
+                .Property(x => x.Comment)
+                .HasColumnName("comment");
+
+
+            modelBuilder.Entity<CommentModel>()
+                .Property(x => x.CreatedAt)
+                .HasColumnName("created_at");
+
+            modelBuilder.Entity<CommentModel>()
                 .Property(x => x.UpdatedAt)
                 .HasColumnName("updated_at");
         }

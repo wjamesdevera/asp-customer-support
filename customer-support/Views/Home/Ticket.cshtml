@@ -1,7 +1,40 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<main ng-init="fetchTicket(@Html.Raw(ViewBag.TicketId))" class="container-md col-md-auto mt-3 question-m-width">
-    <h3 ng-model="ticket.Title">{{ ticket.Title }}</h3>
-    <p ng-model="ticket.Description">{{ ticket.Description }}</p>
+<main ng-init="fetchTicket(@Html.Raw(ViewBag.TicketId))" class="container-md col-md-auto mt-3 question-m-width d-flex flex-column">
+    <div>
+        <h3 ng-model="ticket.Title">{{ ticket.Title }}</h3>
+        <p ng-model="ticket.Description">{{ ticket.Description }}</p>
+    </div>
+    <div ng-init="fetchComments(@Html.Raw(ViewBag.TicketId))" class="border-top py-4">
+        <div ng-repeat="comment in comments track by $index">
+            <div class="d-flex justify-content-start align-items-center gap-2 mb-3">
+                <a ng-if="isLoggedIn" ng-model="comment.author" class="rounded-circle p-4 profile d-flex justify-content-center align-items-center border-1 border-dark me-3" href="#">
+                    <div class="text-uppercase text-white text-center">
+                        {{ comment.author[0] }}
+                    </div>
+                </a>
+                <div>
+                    {{ comment.comment }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="isLoggedIn">
+        <div class="d-flex">
+            <a ng-if="isLoggedIn" ng-model="userFirstName" class="rounded-circle p-4 profile d-flex justify-content-center align-items-center border-1 border-dark me-3" href="#">
+                <div class="text-uppercase text-white text-center">
+                    {{ userFirstName[0] }}
+                </div>
+            </a>
+            <input ng-model="userComment"
+                   type="text"
+                   id="user-comment"
+                   placeholder="Add comment"
+                   required
+                   class="form-control"
+                   />
+            <button class="btn btn-primary" ng-click="submitComment(@Html.Raw(ViewBag.TicketId))">Submit</button>
+        </div>
+    </div>
 </main>

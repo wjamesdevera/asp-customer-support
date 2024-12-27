@@ -10,15 +10,12 @@
     <div class="form-section">
         <h2>Write your Question</h2>
         <label for="title">Title<span style="color: red;">*</span></label>
-        <input type="text" id="title" placeholder="Sum up your question in a sentence.">
-
-        <label for="tags">Tags<span style="color: red;">*</span></label>
-        <input type="text" id="tags" placeholder="Select up to 5 tags to describe your question.">
+        <input ng-model="ticketTitle" type="text" id="title" placeholder="Sum up your question in a sentence.">
 
         <label for="details">Details<span style="color: red;">*</span></label>
-        <textarea id="details" rows="6" placeholder="Share enough details about the problem to understand your issue."></textarea>
+        <textarea ng-model="ticketDescription" id="details" rows="6" placeholder="Share enough details about the problem to understand your issue."></textarea>
 
-        <button>Post your question</button>
+        <button ng-click="postQuestion()">Post your question</button>
     </div>
 
     <div class="tips-section">
