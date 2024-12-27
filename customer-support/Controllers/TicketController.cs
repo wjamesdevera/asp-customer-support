@@ -18,6 +18,7 @@ namespace customer_support.Controllers
             {
                 var tickets = (from ticket in db.Tickets
                               join user in db.Users on ticket.UserId equals user.Id
+                              orderby ticket.CreatedAt descending
                               select new
                               {
                                   id = ticket.Id,

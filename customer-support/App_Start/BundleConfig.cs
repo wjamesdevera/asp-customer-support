@@ -30,6 +30,11 @@ namespace customer_support
                       "~/Content/bootstrap.css",
                       "~/Content/Auth.css"));
 
+            bundles.Add(new StyleBundle("~/Content/analytics-css").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/Analytics.css"));
+
+
             bundles.Add(new ScriptBundle("~/bundles/auth-app").Include(
                 "~/Scripts/app/login/validation.js",
                 "~/Scripts/app/login/login.module.js",
@@ -42,6 +47,12 @@ namespace customer_support
                 "~/Scripts/app/app.module.js",
                 "~/Scripts/app/app.service.js",
                 "~/Scripts/app/app.controller.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/analytics-app").Include(
+                "~/Scripts/app/analytics/analytics.module.js",
+                "~/Scripts/app/analytics/analytics.service.js",
+                "~/Scripts/app/analytics/analytics.controller.js"
                 ));
         }
     }

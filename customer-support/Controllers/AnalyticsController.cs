@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace customer_support.Controllers
 {
-    public class Analytics : Controller
+    public class AnalyticsController : Controller
     {
         // GET: Analytics
         public ActionResult Index()

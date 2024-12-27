@@ -1,13 +1,20 @@
 ﻿<!DOCTYPE html>
-
-<html>
+<html ng-app="analyticsApp">
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/analytics-css")
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
+    @Scripts.Render("~/bundles/angularjs")
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon">
 </head>
-<body>
-    <div>
-        @RenderBody()
-    </div>
+<body ng-controller="analyticsController" ng-init="init()">
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/analytics-app")
 </body>
 </html>

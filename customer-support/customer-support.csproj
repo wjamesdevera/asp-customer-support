@@ -240,7 +240,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\Analytics.cs" />
+    <Compile Include="Controllers\AnalyticsController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -257,6 +257,7 @@
     <Compile Include="Services\Hash.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Analytics.css" />
     <Content Include="Content\Assets\LOGO.png" />
     <Content Include="Content\Assets\steve-johnson-zBacOXolzPI-unsplash.jpg" />
     <Content Include="Content\Auth.css" />
@@ -282,6 +283,9 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\analytics\analytics.service.js" />
+    <Content Include="Scripts\app\analytics\analytics.module.js" />
+    <Content Include="Scripts\app\analytics\analytics.controller.js" />
     <Content Include="Scripts\app\app.controller.js" />
     <Content Include="Scripts\app\app.service.js" />
     <Content Include="Scripts\app\app.module.js" />
@@ -289,9 +293,6 @@
     <Content Include="Scripts\app\login\login.module.js" />
     <Content Include="Scripts\app\login\login.service.js" />
     <Content Include="Scripts\app\login\validation.js" />
-    <Content Include="Scripts\app\ticket\ticket.controller.js" />
-    <Content Include="Scripts\app\ticket\ticket.module.js" />
-    <Content Include="Scripts\app\ticket\ticket.service.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -332,6 +333,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="ticket_db.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -352,10 +354,10 @@
     <Content Include="Views\Shared\_Auth.cshtml" />
     <Content Include="Views\Home\CreateTicket.cshtml" />
     <Content Include="Views\Shared\_Analytics.cshtml" />
+    <Content Include="Views\Analytics\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Analytics\" />
     <Folder Include="Views\Seed\" />
   </ItemGroup>
   <ItemGroup>
